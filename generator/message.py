@@ -1,0 +1,1 @@
+"""Handle generation of random quotes and motivational message outputs."""

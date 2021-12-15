@@ -1,0 +1,1 @@
+"""Handle full command line output execution."""
