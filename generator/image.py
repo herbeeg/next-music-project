@@ -52,6 +52,31 @@ class ImageGen:
 
         return image_data
 
+    def extension(self, ident=''):
+        images = {
+            '2a03': [
+                [(1, 3), (1, 4), (1, 5)],
+                [(2, 2), (2, 6)],
+                [(3, 5), (3, 8), (3, 10)],
+                [(4, 3), (4, 9), (4, 10), (4, 11)],
+                [(5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 8), (5, 12)]
+            ],
+            'fds': [],
+            'vrc6': [],
+            'vrc7': [],
+            'n163': []
+        }
+
+        image_data = []
+
+        try:
+            image_data = images[ident]
+        except IndexError as ex:
+            sys.stdout.write('Invalid FamiTracker extension type passed to image generator.\n')
+            sys.exit()
+
+        return image_data
+
     def getBase(self):
         return [
             ['@', '=', '=', '=', '=', '=', '=', '=', '=', '=', '=', '=', '=', '=', '@'],
